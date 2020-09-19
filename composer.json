@@ -1,0 +1,30 @@
+{
+    "name": "poonam/omnipay-mobikwikpg",
+    "type": "library",
+    "description": "Mobikwikpg gateway for Omnipay payment processing library",
+    "keywords": [
+        "gateway",
+        "merchant",
+        "omnipay",
+        "pay",
+        "payment",
+        "mobikwikpg",
+        "zaakpay",
+        "purchase"
+    ],
+    "authors": [
+        {
+            "name": "Poonam",
+            "email": "poonam.thakur@futurescapetech.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Omnipay\\Mobikwikpg\\" : "src/" }
+    },
+    "require": {
+        "omnipay/common": "^3"   
+    },
+    "require-dev": {
+        "omnipay/tests": "^3"
+    }
+}
