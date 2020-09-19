@@ -1,5 +1,5 @@
 {
-    "name": "poonam/omnipay-mobikwikpg",
+    "name": "poonam0311/omnipay-mobikwikpg",
     "type": "library",
     "description": "Mobikwikpg gateway for Omnipay payment processing library",
     "keywords": [
@@ -15,7 +15,7 @@
     "authors": [
         {
             "name": "Poonam",
-            "email": "poonam.thakur@futurescapetech.com"
+            "email": "poonamthakur0311@gmail.com"
         }
     ],
     "autoload": {
