@@ -31,8 +31,6 @@ class PurchaseRequest extends AbstractRequest
         }
 
         return $data;
-
-        return $data;
     }
     
     public function sendData($data)
