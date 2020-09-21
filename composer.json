@@ -19,7 +19,8 @@
         }
     ],
     "autoload": {
-        "psr-4": { "Omnipay\\Mobikwikpg\\" : "src/" }
+        "psr-4": { "Omnipay\\Mobikwikpg\\" : "src/" },
+        "classmap": ["src/Gateway.php"]
     },
     "require": {
         "omnipay/common": "^3"   
