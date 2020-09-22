@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\Mobikwik\Message;
+namespace Omnipay\Mobikwikpg\Message;
 
 use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Common\Message\RedirectResponseInterface;
@@ -19,7 +19,7 @@ class PurchaseResponse extends AbstractResponse implements RedirectResponseInter
 
         public function getRedirectUrl()
         {
-            return $this->getRequest()->getReturnUrl();
+            return $this->getRequest()->getRedirectUrl();
         }
     
         public function getRedirectMethod()
