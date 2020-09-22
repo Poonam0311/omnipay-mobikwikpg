@@ -14,14 +14,14 @@ class PurchaseRequest extends AbstractRequest
         $data = [
             'amount' => $this->getAmount(),
             'buyerEmail' => $this->getBuyerEmail() ,
+            'currency' => $this->getCurrency(),
             'merchantIdentifier' => $this->getMerchantIdentifier(),
             'merchantIpAddress' => $this->getMerchantIpAddress(),
             'mode' => $this->getMode(),
             'orderId' => $this->getOrderId(),
+            'returnUrl' => $this->getReturnUrl(),
             'txnType' => $this->getTxnType(),
-            'currency' => $this->getCurrency(),
-            'returnUrl' => $this->getReturnUrl()
-        ];
+         ];
 
         // special validation
         if ($this->getChecksum()) {
@@ -120,15 +120,16 @@ class PurchaseRequest extends AbstractRequest
 
     public function getChecksum()
     {
-        $str = "amount="+$this->getAmount()+
-        "buyerEmail="+$this->getBuyerEmail()+
-        "currency="+$this->getCurrency()+
-        "merchantIdentifier="+$this->getMerchantIdentifier()+
-        "merchantIpAddress="+$this->getMerchantIpAddress()+
-        "mode="+$this->getMode()+
-        "orderId="+$this->getOrderId()+
-        "returnUrl="+$this->getReturnUrl()+
-        "txnType="+$this->getTxnType();
+        $str = "amount=".$this->getAmount().
+        "&buyerEmail=".$this->getBuyerEmail().
+        "&currency=".$this->getCurrency().
+        "&merchantIdentifier=".$this->getMerchantIdentifier().
+        "&merchantIpAddress=".$this->getMerchantIpAddress().
+        "&mode=".$this->getMode().
+        "&orderId=".$this->getOrderId().
+        "&returnUrl=".$this->getReturnUrl().
+        "&txnType=".$this->getTxnType()."&";
+
         $value = hash_hmac("sha256", $str, $this->getMerchantSecret());
         $this->setParameter('checksum', $value);
         return $this->getParameter('checksum');
@@ -152,6 +153,16 @@ class PurchaseRequest extends AbstractRequest
     public function setReturnUrl($value)
     {
         return $this->setParameter('returnUrl', $value);
+    }
+
+    public function getRedirectUrl()
+    {
+        return $this->getParameter('redirectUrl');
+    }
+
+    public function setRedirectUrl($value)
+    {
+        return $this->setParameter('redirectUrl', $value);
     }
 
 }
