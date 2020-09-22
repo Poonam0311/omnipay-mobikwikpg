@@ -13,7 +13,7 @@ to your `composer.json` file:
 ```json
 {
     "require": {
-        "poonam0311/omnipay-mobikwikpg": "~0.1"
+        "poonam0311/omnipay-mobikwikpg": "dev-master"
     }
 }
 ```
