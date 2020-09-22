@@ -43,7 +43,7 @@ class CompletePurchaseRequest extends AbstractRequest
         "productDescription","product1Description","product2Description",
         "product3Description","product4Description","pgTransId","pgTransTime");
         foreach($checksumsequence as $seqvalue)	{
-            if(array_key_exists($seqvalue, $parameters))	{
+            if(array_key_exists($seqvalue, $data))	{
                 
                 $all .= $seqvalue;
                 $all .="=";
