@@ -56,9 +56,7 @@ class CompletePurchaseRequest extends AbstractRequest
         if (isset($data['responseCode']) && $data['responseCode']=="100" && $status) {
              $resp['success'] = true;
         }
-            
-            
-        return new Response($resp);
+        return new CompletePurchaseResponse($this,$resp);
     }
 
 }
